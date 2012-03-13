@@ -1,0 +1,43 @@
+rails new who_got_my -d mysql
+git init
+git add .
+git commit -m 'first commit'
+git remote add origin git@github.com:railslove/who_got_my.git
+git push -u origin master
+rails g scaffold Item name:string description:text borrower:string
+rake db:create:all
+rake db:migrate
+rails s
+rake
+git add .
+git commit -m 'item scaffold'
+# Test und Validation schreiben
+git add .
+git commit -m 'add name validation for items'
+# config/routes.rb anpassen
+git rm public/index.html
+# rails s neu starten
+git commit -am 'items#index as root url'
+rails g model Location name:string
+rails g migration AssociateLocationsWithUsers
+# models anpassen (has_many/belongs_to)
+# fixtures anpassen
+# tests schreiben
+git add .
+git commit -am 'add locations and associate them with items'
+rails c
+Location.create name: 'Home'
+Location.create name: 'Work'
+# adjust index, show, form views
+git commit -am 'add location to views'
+rails g scaffold Category name:string
+rake db:migrate
+git add .
+git commit -am 'category scaffold'
+rails g migration AssociateCategoriesWithItems
+# join table erstellen, models anpassen has_and_belongs_to_many
+# categories fixtures anpassen, generierte functional tests anpassen
+# tests schreiben
+git add .
+git commit -m 'associate categories with items'
+
