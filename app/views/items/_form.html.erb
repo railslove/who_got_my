@@ -23,6 +23,10 @@
     <%= f.label :borrower %><br />
     <%= f.text_field :borrower %>
   </div>
+  <div class="field">
+    <%= f.label :location_id %><br />
+    <%= f.select :location_id, Location.all.map {|l| [l.name, l.id] } %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

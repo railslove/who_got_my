@@ -5,6 +5,7 @@
     <th>Name</th>
     <th>Description</th>
     <th>Borrower</th>
+    <th>Location</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,6 +16,7 @@
     <td><%= item.name %></td>
     <td><%= item.description %></td>
     <td><%= item.borrower %></td>
+    <td><%= item.location.name %></td>
     <td><%= link_to 'Show', item %></td>
     <td><%= link_to 'Edit', edit_item_path(item) %></td>
     <td><%= link_to 'Destroy', item, confirm: 'Are you sure?', method: :delete %></td>
