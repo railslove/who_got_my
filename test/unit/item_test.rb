@@ -11,8 +11,15 @@ class ItemTest < ActiveSupport::TestCase
     refute item.persisted?
   end
 
-  test 'item should have a location' do
+  test 'item has a location' do
     item = items(:one)
     assert_equal locations(:home).name, item.location.name
+  end
+
+  test 'item has a category' do
+    item = items(:one)
+    item.categories << categories(:books)
+
+    assert_equal categories(:books), item.categories.first
   end
 end
